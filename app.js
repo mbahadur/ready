@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 //Mongoose
-mongoose.connect('mongodb://localhost/todoApp', function(err) {
+mongoose.connect('mongodb://172.31.47.12/todoApp', function(err) {
     if(err) {
         console.log('connection error', err);
     } else {
