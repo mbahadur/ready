@@ -17,7 +17,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 //Mongoose
-mongoose.connect('mongodb://localhost/todoApp', function(err) {
+var localdb = 'mongodb://localhost/oready'
+var hostdb = 'mongodb://mbahadur:Ad111111@ds011664.mlab.com:11664/heroku_jpvxwd47'
+mongoose.connect(hostdb, function(err) {
     if(err) {
         console.log('connection error', err);
     } else {
