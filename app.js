@@ -18,8 +18,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 //Mongoose
 var localdb = 'mongodb://localhost/oready'
-//var hostdb = 'mongodb://mbahadur:Ad111111@ds011664.mlab.com:11664/heroku_jpvxwd47'
-mongoose.connect(localdb, function(err) {
+var hostdb = process.env.MONGODB_URI
+mongoose.connect(hostdb, function(err) {
     if(err) {
         console.log('connection error', err);
     } else {
