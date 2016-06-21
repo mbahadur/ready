@@ -21,11 +21,11 @@ router.get('/', function(req, res, next) {
 
 /** Login create */
 router.post('/create', function(req, res, next) {
-  var encrypted = cipher.update(req.body.password, 'utf8', 'hex') + cipher.final('hex');
+ // var encrypted = cipher.update(req.body.password, 'utf8', 'hex') + cipher.final('hex');
 //var decipher = crypto.createDecipher(algorithm, key);
 //var decrypted = decipher.update(encrypted, 'hex', 'utf8') + decipher.final('utf8');
 
-  req.body.password = encrypted;
+  //req.body.password = encrypted;
   User.find({"email":req.body.email}).count(function(err, count){
     
     if(count>0)
