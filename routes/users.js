@@ -45,9 +45,9 @@ router.post('/create', function(req, res, next) {
 
 /** Login API */
 router.post('/login', function(req, res, next) {  
-  var encrypted = cipher.update(req.body.password, 'utf8', 'hex') + cipher.final('hex');
-  req.body.password = encrypted;
-  User.find({"email":req.body.email,"password":encrypted}).count(function(err, count){
+  //var encrypted = cipher.update(req.body.password, 'utf8', 'hex') + cipher.final('hex');
+  //req.body.password = encrypted;
+  User.find({"email":req.body.email,"password":req.body.password}).count(function(err, count){
     if(count>0)
     {
         res.json({"success":true});
