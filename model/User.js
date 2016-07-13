@@ -6,7 +6,7 @@ var UserSchema = new mongoose.Schema({
   name: String,
   password:String,
   created_at: { type: Date, default: Date.now },
-  isActive: boolean
+  isActive: { type: Boolean, default: false } 
 });
 
 module.exports = mongoose.model('User', UserSchema);
