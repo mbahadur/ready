@@ -5,7 +5,8 @@ var UserSchema = new mongoose.Schema({
   phone: String,
   name: String,
   password:String,
-  created_at: { type: Date, default: Date.now }
+  created_at: { type: Date, default: Date.now },
+  isActive: boolean
 });
 
 module.exports = mongoose.model('User', UserSchema);
